@@ -32,6 +32,11 @@ namespace ZenithWebSite.Migrations.Identity
                 {
                     Description = "Intro to ASP.NET",
                     CreationDate = new DateTime(2017,1,1,12,00,00),
+                },
+                new Activity()
+                {
+                    Description = "Dancing with Mani",
+                    CreationDate = new DateTime(2017,1,1,3,00,00),
                 }
             };
             return activities.ToArray(); 
@@ -40,14 +45,34 @@ namespace ZenithWebSite.Migrations.Identity
         {
             var events = new List<Event>
             {
-                new Event()
+                new ZenithDataLib.Models.Event()
                 {
                     Start = new DateTime(2017,1,30,8,30,0),
                     End = new DateTime(2017,1,30,10,30,0),
-                    CreatedBy = "UserName1",
+                    CreatedBy = "a",
 
                     ActivityId = context.Activities.FirstOrDefault(a => a.Description=="Intro to ASP.NET").ActivityId,
                     CreationDate = new DateTime(2017,1,1,12,00,00),
+                    IsActive = true
+                },
+                new ZenithDataLib.Models.Event()
+                {
+                    Start = new DateTime(2017,2,3,8,30,0),
+                    End = new DateTime(2017,2,3,10,30,0),
+                    CreatedBy = "a",
+
+                    ActivityId = context.Activities.FirstOrDefault(a => a.Description=="Intro to ASP.NET").ActivityId,
+                    CreationDate = new DateTime(2017,1,2,12,00,00),
+                    IsActive = true
+                },
+                new ZenithDataLib.Models.Event()
+                {
+                     Start = new DateTime(2017,2,3,11,00,0),
+                    End = new DateTime(2017,2,3,12,00,0),
+                    CreatedBy = "a",
+
+                    ActivityId = context.Activities.FirstOrDefault(a => a.Description=="Dancing with Mani").ActivityId,
+                    CreationDate = new DateTime(2017,1,2,12,00,00),
                     IsActive = true
                 }
             };
