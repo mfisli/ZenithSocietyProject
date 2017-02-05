@@ -5,4 +5,3 @@ C:\Users\Maks Fisli\documents\visual studio 2015\Projects\ZenithSociety\ZenithDa
 C:\Users\Maks Fisli\documents\visual studio 2015\Projects\ZenithSociety\ZenithDataLib\bin\Debug\EntityFramework.xml
 C:\Users\Maks Fisli\documents\visual studio 2015\Projects\ZenithSociety\ZenithDataLib\obj\Debug\ZenithDataLib.dll
 C:\Users\Maks Fisli\documents\visual studio 2015\Projects\ZenithSociety\ZenithDataLib\obj\Debug\ZenithDataLib.pdb
-C:\Users\Maks Fisli\documents\visual studio 2015\Projects\ZenithSociety\ZenithDataLib\obj\Debug\ZenithDataLib.csprojResolveAssemblyReference.cache
