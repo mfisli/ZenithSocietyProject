@@ -7,6 +7,8 @@ namespace ZenithWebSite.Migrations.Identity
     using System.Data.Entity.Migrations;
     using System.Linq;
     using ZenithDataLib.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ZenithWebSite.Models.ApplicationDbContext>
     {
@@ -18,11 +20,59 @@ namespace ZenithWebSite.Migrations.Identity
 
         protected override void Seed(ZenithWebSite.Models.ApplicationDbContext context)
         {
-            context.Activities.AddOrUpdate(a => a.ActivityId, getActivities());
+            setRoles(context);
+            context.SaveChanges();
+            setUsers(context);
+            context.SaveChanges(); context.Activities.AddOrUpdate(a => a.ActivityId, getActivities());
             context.SaveChanges();
             context.Events.AddOrUpdate(e => e.EventId, getEvents(context));
             context.SaveChanges();
         }
+        private void setRoles(ZenithWebSite.Models.ApplicationDbContext context)
+        {
+            if (!context.Roles.Any(r => r.Name == "Admin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Admin" };
+
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(r => r.Name == "Member"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Member" };
+
+                manager.Create(role);
+            }
+        }
+
+        private void setUsers(ZenithWebSite.Models.ApplicationDbContext context)
+        {
+            if (!context.Users.Any(u => u.UserName == "a"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser { UserName = "a", Email = "a@a.a" };
+
+                manager.Create(user, "P@$$w0rd");
+                manager.AddToRole(user.Id, "Admin");
+            }
+
+            if (!context.Users.Any(u => u.UserName == "m"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser { UserName = "m", Email = "m@m.m" };
+
+                manager.Create(user, "P@$$w0rd");
+                manager.AddToRole(user.Id, "Member");
+            }
+        }
+
+
 
         private Activity[] getActivities()
         {
