@@ -52,8 +52,8 @@ namespace ZenithWebSite.Models
         [Display(Name = "User Name")]
         public string UserName { get; set; }
 
-        // I dont think i need this
-        [Required]
+        // I dont think i need this [Required]
+
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

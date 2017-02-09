@@ -1,35 +1,54 @@
-﻿@using ZenithDataLib.Models
-@model IEnumerable<ZenithDataLib.Models.Activity>
+﻿@model IEnumerable<ZenithDataLib.Models.Activity>
 
 @{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>Zenith Society</h1>
-    <p class="lead">These are the Activities happening this week.</p>
+    <span class="text-info"><h1>Zenith Society</h1></span>
+    <p class="lead">Join us for great events!</p>
 </div>
 
 <table class="table">
-    <tr>
-        <th>
-            Date XXX 
-        </th>
-    </tr>
+
+    @{ 
+        DateTime day = DateTime.MinValue;
+    }
 
     @foreach (var item in Model)
     {
         foreach (var element in item.Events)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => element.Start)  -
-                @Html.DisplayFor(modelItem => element.End)
-            </td>            
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-        </tr>
+            // for displaying the heading date
+            DateTime date = element.Start.Date;
+            string headingDate = date.ToLongDateString();
+
+            // for displaying the start time 
+            DateTime startTimeRaw = DateTime.Parse(element.Start.ToString());
+            string startTime = startTimeRaw.ToString("hh:mm:tt");
+
+            // end time 
+            DateTime endTimeRaw = DateTime.Parse(element.End.ToString());
+            string endTime = endTimeRaw.ToString("hh:mm:tt");
+
+            // for activity description 
+            string description = item.Description; 
+
+            <tr>
+                <th colspan="2" class="text-center label-info">
+                    @headingDate
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    @startTime  -
+                    @endTime
+                </td>            
+                <td>
+                    @description
+                </td>
+            </tr>
        }
    }
 
