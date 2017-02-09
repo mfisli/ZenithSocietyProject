@@ -518,7 +518,11 @@ namespace ZenithWebSite.Migrations.Identity
             return events.ToArray();
         }
         /*    
-         *    // new DateTime( year, month, day, hour, min, sec) 
+         *    // new DateTime( year, month, 
+         *    
+         *    
+         *    
+         *    , hour, min, sec) 
    
         // events 
         public int EventId { get; set; }
