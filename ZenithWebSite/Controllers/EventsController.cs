@@ -12,6 +12,7 @@ using ZenithWebSite.Models;
 
 namespace ZenithWebSite.Controllers
 {
+    [Authorize(Roles = "Admin")] 
     public class EventsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
