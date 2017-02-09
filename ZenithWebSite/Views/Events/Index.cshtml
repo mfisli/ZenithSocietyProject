@@ -1,16 +1,21 @@
 ﻿@model IEnumerable<ZenithDataLib.Models.Event>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Event List";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityId)
+        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Start)
         </th>
@@ -31,6 +36,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activity.Description)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Start)
         </td>
