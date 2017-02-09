@@ -46,14 +46,14 @@ namespace ZenithWebSite.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "The Zenith Society is a place to live and grow - together.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Say hi to Zenith.";
 
             return View();
         }
