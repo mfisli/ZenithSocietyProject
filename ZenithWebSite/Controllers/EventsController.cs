@@ -20,6 +20,7 @@ namespace ZenithWebSite.Controllers
         // GET: Events
         public async Task<ActionResult> Index()
         {
+            var activity = db.Activities.Include(a => a.ActivityId);
             return View(await db.Events.ToListAsync());
         }
 
@@ -41,6 +42,7 @@ namespace ZenithWebSite.Controllers
         // GET: Events/Create
         public ActionResult Create()
         {
+            ViewBag.ActivityId = new SelectList(db.Activities, "ActivityId", "Description");
             return View();
         }
 
@@ -49,7 +51,7 @@ namespace ZenithWebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "EventId,Start,End,CreatedBy,CreationDate,IsActive")] Event @event)
+        public async Task<ActionResult> Create([Bind(Include = "EventId,Start,End,CreatedBy,CreationDate,IsActive,ActivityId")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +59,7 @@ namespace ZenithWebSite.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.ActivityId = new SelectList(db.Activities, "ActivityId", "Description");
             return View(@event);
         }
 
@@ -73,6 +75,7 @@ namespace ZenithWebSite.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ActivityId = new SelectList(db.Activities, "ActivityId", "Description");
             return View(@event);
         }
 
@@ -81,7 +84,7 @@ namespace ZenithWebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "EventId,Start,End,CreatedBy,CreationDate,IsActive")] Event @event)
+        public async Task<ActionResult> Edit([Bind(Include = "EventId,Start,End,CreatedBy,CreationDate,IsActive,ActivityId")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -89,6 +92,7 @@ namespace ZenithWebSite.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+            ViewBag.ActivityId = new SelectList(db.Activities, "ActivityId", "Description");
             return View(@event);
         }
 

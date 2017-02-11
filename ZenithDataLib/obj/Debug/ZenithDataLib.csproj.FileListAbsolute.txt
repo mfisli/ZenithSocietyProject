@@ -26,3 +26,17 @@ C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\Z
 C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithDataLib\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithDataLib\obj\Debug\ZenithDataLib.dll
 C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithDataLib\obj\Debug\ZenithDataLib.pdb
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\ZenithDataLib.dll.config
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\ZenithDataLib.dll
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\ZenithDataLib.pdb
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\EntityFramework.dll
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\EntityFramework.xml
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\obj\Debug\ZenithDataLib.csprojResolveAssemblyReference.cache
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\obj\Debug\ZenithDataLib.dll
+C:\Users\Dalton\Documents\Visual Studio 2015\Projects\4976\ZenithSocietyProject\ZenithDataLib\obj\Debug\ZenithDataLib.pdb
