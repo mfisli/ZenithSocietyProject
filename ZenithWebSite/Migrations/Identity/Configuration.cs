@@ -9,6 +9,8 @@ namespace ZenithWebSite.Migrations.Identity
     using ZenithDataLib.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using System.Data.Entity.Validation;
+    using System.Text;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ZenithWebSite.Models.ApplicationDbContext>
     {
@@ -20,18 +22,51 @@ namespace ZenithWebSite.Migrations.Identity
 
         protected override void Seed(ZenithWebSite.Models.ApplicationDbContext context)
         {
+            Console.WriteLine("Trying to seed");
             // seed roles and users
             setRoles(context);
-            context.SaveChanges();
+            SaveChanges(context);
             setUsers(context);
-            context.SaveChanges();
+            SaveChanges(context);
 
             // seed Activites and events
             context.Activities.AddOrUpdate(a => a.ActivityId, getActivities());
-            context.SaveChanges();
+            SaveChanges(context);
             context.Events.AddOrUpdate(e => e.EventId, getEvents(context));
-            context.SaveChanges();
+            SaveChanges(context);
         }
+        /// <summary>
+        /// http://stackoverflow.com/questions/10219864/ef-code-first-how-do-i-see-entityvalidationerrors-property-from-the-nuget-pac
+        /// Wrapper for SaveChanges adding the Validation Messages to the generated exception
+        /// </summary>
+        /// <param name="context">The context.</param>
+        private void SaveChanges(DbContext context)
+        {
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                foreach (var failure in ex.EntityValidationErrors)
+                {
+                    sb.AppendFormat("\t {0} failed validation\n", failure.Entry.Entity.GetType());
+                    foreach (var error in failure.ValidationErrors)
+                    {
+                        sb.AppendFormat("- {0} : {1}", error.PropertyName, error.ErrorMessage);
+                        sb.AppendLine();
+                    }
+                }
+
+                throw new DbEntityValidationException(
+                    "\t Entity Validation Failed - errors follow:\n" +
+                    sb.ToString(), ex
+                ); // Add the original exception as the innerException
+            }
+        }
+
         private void setRoles(ZenithWebSite.Models.ApplicationDbContext context)
         {
             if (!context.Roles.Any(r => r.Name == "Admin"))
@@ -256,8 +291,8 @@ namespace ZenithWebSite.Migrations.Identity
                 },
                 new ZenithDataLib.Models.Event()
                 {
-                    Start = new DateTime(2017,2,5,8,30,0),
-                    End = new DateTime(2017,2,5,10,30,0),
+                    Start = new DateTime(2017,2,5,10,30,0),
+                    End = new DateTime(2017,2,5,12,30,0),
                     CreatedBy = "a",
 
                     ActivityId = context.Activities.FirstOrDefault(a => a.Description=="Swimming Exercise for parents").ActivityId,
@@ -377,7 +412,7 @@ namespace ZenithWebSite.Migrations.Identity
                 new ZenithDataLib.Models.Event()
                 {
                     Start = new DateTime(2017,2,11,12,00,0),
-                    End = new DateTime(2017,2,11,1,30,0),
+                    End = new DateTime(2017,2,11,13,30,0),
                     CreatedBy = "a",
 
                     ActivityId = context.Activities.FirstOrDefault(a => a.Description=="Lunch").ActivityId,
@@ -386,7 +421,7 @@ namespace ZenithWebSite.Migrations.Identity
                 },
                 new ZenithDataLib.Models.Event()
                 {
-                    Start = new DateTime(2017,2,11,17,00,0),
+                    Start = new DateTime(2017,2,11,12,00,0),
                     End = new DateTime(2017,2,13,12,30,0),
                     CreatedBy = "a",
 
@@ -446,8 +481,8 @@ namespace ZenithWebSite.Migrations.Identity
                 },
                 new ZenithDataLib.Models.Event()
                 {
-                    Start = new DateTime(2017,2,16,12,00,0),
-                    End = new DateTime(2017,2,16,1,30,0),
+                    Start = new DateTime(2017,2,16,7,00,0),
+                    End = new DateTime(2017,2,16,8,30,0),
                     CreatedBy = "a",
 
 
@@ -469,7 +504,7 @@ namespace ZenithWebSite.Migrations.Identity
                 new ZenithDataLib.Models.Event()
                 {
                     Start = new DateTime(2017,2,17,12,00,0),
-                    End = new DateTime(2017,2,17,1,30,0),
+                    End = new DateTime(2017,2,17,13,30,0),
                     CreatedBy = "a",
 
 

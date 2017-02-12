@@ -295,10 +295,8 @@ C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\Z
 C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.csprojResolveAssemblyReference.cache
-C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.Migrations.Identity.FirstMigration.resources
-C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.Migrations.Identity.FirstMigration1.resources
-C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.Migrations.Identity.SecondMigration.resources
-C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.Migrations.Identity.FirstMigration2.resources
-C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.csproj.GenerateResource.Cache
 C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.dll
 C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.pdb
+C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.Migrations.Identity.FirstMigration.resources
+C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.csproj.GenerateResource.Cache
+C:\Users\Maks Fisli\Documents\Visual Studio 2015\Projects\ZenithSocietyProject\ZenithWebSite\obj\Debug\ZenithWebSite.Migrations.Identity.SecondMigration.resources

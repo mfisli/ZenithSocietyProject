@@ -175,21 +175,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Identity\201701300043437_FirstMigration.cs" />
-    <Compile Include="Migrations\Identity\201701300043437_FirstMigration.Designer.cs">
-      <DependentUpon>201701300043437_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\Identity\201702120414201_FirstMigration.cs" />
+    <Compile Include="Migrations\Identity\201702120414201_FirstMigration.Designer.cs">
+      <DependentUpon>201702120414201_FirstMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Identity\201701310140478_FirstMigration1.cs" />
-    <Compile Include="Migrations\Identity\201701310140478_FirstMigration1.Designer.cs">
-      <DependentUpon>201701310140478_FirstMigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Identity\201701310251408_SecondMigration.cs" />
-    <Compile Include="Migrations\Identity\201701310251408_SecondMigration.Designer.cs">
-      <DependentUpon>201701310251408_SecondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Identity\201702042010135_FirstMigration2.cs" />
-    <Compile Include="Migrations\Identity\201702042010135_FirstMigration2.Designer.cs">
-      <DependentUpon>201702042010135_FirstMigration2.cs</DependentUpon>
+    <Compile Include="Migrations\Identity\201702120422224_SecondMigration.cs" />
+    <Compile Include="Migrations\Identity\201702120422224_SecondMigration.Designer.cs">
+      <DependentUpon>201702120422224_SecondMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Identity\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -268,7 +260,6 @@
     <Content Include="Views\Events\Edit.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -283,18 +274,13 @@
       <Name>ZenithDataLib</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\Identity\201701300043437_FirstMigration.resx">
-      <DependentUpon>201701300043437_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\Identity\201702120414201_FirstMigration.resx">
+      <DependentUpon>201702120414201_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\Identity\201701310140478_FirstMigration1.resx">
-      <DependentUpon>201701310140478_FirstMigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\Identity\201701310251408_SecondMigration.resx">
-      <DependentUpon>201701310251408_SecondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\Identity\201702042010135_FirstMigration2.resx">
-      <DependentUpon>201702042010135_FirstMigration2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\Identity\201702120422224_SecondMigration.resx">
+      <DependentUpon>201702120422224_SecondMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

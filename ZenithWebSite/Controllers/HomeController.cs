@@ -23,12 +23,9 @@ namespace ZenithWebSite.Controllers
         {
             // used to limit the range of events in current week
             DateTime today = DateTime.Today;
-            DateTime startOfWeek = today.AddDays(-(int)today.DayOfWeek);
+            DateTime startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
             DateTime endOfWeek = startOfWeek.AddDays(7);
-
-            // Wrong logic
-            // Valid: in this week (range) and IsActive 
-            // ANY might be the wrong thing to use 
+            
             var activities = db.Activities.Include(a => a.Events)
                                 .Where(a => a.Events
                                              .Any(e => e.Start >= startOfWeek && 
@@ -63,10 +60,6 @@ namespace ZenithWebSite.Controllers
             {
                 day.Events = day.Events.OrderBy( e => e.Start).ToList();
             }
-
-
-            // order by datetime 
-            //activities = activities.OrderBy(e => e.Events.Start).ToList();
 
             return View(WeekInfo); // view is expecting a list of activities 
         }

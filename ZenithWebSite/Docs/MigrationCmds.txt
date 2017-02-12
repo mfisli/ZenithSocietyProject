@@ -1,7 +1,12 @@
 ﻿==============================  ApplicationDbContext =============================
 
-Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Identity
+// Note the extra -ContextProjectName switch
+Enable-Migrations -ContextTypeName ApplicationDbContext -ContextProjectName ZenithDataLib -MigrationsDirectory Migrations\Identity
 
 add-migration -ConfigurationTypeName ZenithWebSite.Migrations.Identity.Configuration "FirstMigration"
 
 update-database -ConfigurationTypeName ZenithWebSite.Migrations.Identity.Configuration
+
+// Just in case you need to roll back ALL migrations 
+// Carefule: results in data loss; same as dropping tables
+update-database -TargetMigration:0 -Force

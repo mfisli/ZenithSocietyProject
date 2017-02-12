@@ -22,7 +22,7 @@ namespace ZenithWebSite.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false){}
+            : base("ZenithSociety", throwIfV1Schema: false){}
 
         // Connection to entities. 
         public DbSet<Activity> Activities { get; set; } 
