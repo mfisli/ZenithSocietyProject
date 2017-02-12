@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ZenithDataLib.Models.Activity>
+﻿@using ZenithWebSite.Controllers;
+@model List<HomeController.DayInfo>
 
 @{
     ViewBag.Title = "Home Page";
@@ -11,35 +12,29 @@
 
 <table class="table">
 
-    @{ 
-        DateTime day = DateTime.MinValue;
-    }
-
-    @foreach (var item in Model)
+    @foreach (var day in Model)
     {
-        foreach (var element in item.Events)
+        // displaying the heading date
+        DateTime date = day.Day;
+        string headingDate = date.ToLongDateString();
+        <tr>
+            <th colspan="2" class="text-center label-info">
+                @headingDate
+            </th>
+        </tr>
+        foreach (var e in day.Events)
         {
-            // for displaying the heading date
-            DateTime date = element.Start.Date;
-            string headingDate = date.ToLongDateString();
-
-            // for displaying the start time 
-            DateTime startTimeRaw = DateTime.Parse(element.Start.ToString());
+            // displaying the start time
+            DateTime startTimeRaw = DateTime.Parse(e.Start.ToString());
             string startTime = startTimeRaw.ToString("hh:mm:tt");
 
-            // end time 
-            DateTime endTimeRaw = DateTime.Parse(element.End.ToString());
+            // displaying end time
+            DateTime endTimeRaw = DateTime.Parse(e.End.ToString());
             string endTime = endTimeRaw.ToString("hh:mm:tt");
 
-            // for activity description 
-            string description = item.Description; 
-
-            <tr>
-                <th colspan="2" class="text-center label-info">
-                    @headingDate
-                </th>
-            </tr>
-
+            // displaying activity description
+            string description = e.Description;
+            
             <tr>
                 <td>
                     @startTime  -

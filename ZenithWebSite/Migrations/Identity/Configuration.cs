@@ -20,10 +20,14 @@ namespace ZenithWebSite.Migrations.Identity
 
         protected override void Seed(ZenithWebSite.Models.ApplicationDbContext context)
         {
+            // seed roles and users
             setRoles(context);
             context.SaveChanges();
             setUsers(context);
-            context.SaveChanges(); context.Activities.AddOrUpdate(a => a.ActivityId, getActivities());
+            context.SaveChanges();
+
+            // seed Activites and events
+            context.Activities.AddOrUpdate(a => a.ActivityId, getActivities());
             context.SaveChanges();
             context.Events.AddOrUpdate(e => e.EventId, getEvents(context));
             context.SaveChanges();
